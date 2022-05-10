@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-lato {
+  font-family: 'Lato', sans-serif;
+}
+.font-muli {
+  font-family: 'Mulish', sans-serif;
+}
