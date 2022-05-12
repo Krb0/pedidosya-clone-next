@@ -6,7 +6,7 @@ import MoreInfo from '../../assets/icons/moreInfo.svg'
 import Link from 'next/link'
 const Navbar = () => {
   return (
-    <div className="flex w-full items-center bg-[#F9F6F4] py-4 ">
+    <div className="z-2 relative flex w-full items-center bg-[#F9F6F4] py-4 shadow-lg">
       <div className="flex w-[25%] justify-center">
         <Logo />
       </div>
