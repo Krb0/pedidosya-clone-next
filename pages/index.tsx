@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <title>FakeYa</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="bg-food h-[85vh] ">
         <h1>FakeYa</h1>
       </main>
     </Layout>
