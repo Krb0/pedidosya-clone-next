@@ -8,7 +8,7 @@
 .font-muli {
   font-family: 'Mulish', sans-serif;
 }
-@responsive {
+@layer utilities {
   .bg-food {
     background: url('https://images.deliveryhero.io/image/pedidosya/home-backgrounds/home-background-ar.jpg?quality=100&width=1345');
     background-size: cover;
