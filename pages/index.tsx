@@ -24,12 +24,12 @@ const Home: NextPage = () => {
           </span>
           <div className="flex h-[64px] w-[100%] ">
             <div className="flex h-full w-[100%] items-center rounded-full bg-white">
-              <div className="flex min-w-[200px] items-center ">
+              <div className="flex min-w-fit items-center ">
                 <div className="relative ml-[16px] mr-[8px] h-[1.1rem] w-[1.1rem]  ">
                   <Image src={LocationSVG} layout="fill" />
                 </div>
                 <span className="mr-1 text-[1.1rem] text-black">
-                  Capital Federal
+                  Zona Falsa
                 </span>
                 <div className="relative mr-2 h-[1.3rem] w-[1.3rem]  ">
                   <Image src={MoreInfoSVG} layout="fill" />
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
               </div>
               <input
                 className="h-full w-full rounded-full text-gray-500 outline-none"
-                placeholder="Ingresa"
+                placeholder="Calle y número de puerta"
               />
             </div>
             <button className="ml-[20px] h-full w-[160px] rounded-full bg-[#FA0050]">
