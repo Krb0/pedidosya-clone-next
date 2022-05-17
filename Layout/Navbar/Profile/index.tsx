@@ -36,8 +36,8 @@ export default function Profile() {
       >
         <Menu.Items className="absolute -right-6 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none xl:left-1">
           <div className="flex flex-col gap-2 py-3">
-            <Menu.Item>
-              <Link href="/support">
+            <Link href="/support">
+              <Menu.Item>
                 <div className="font-muli hover:bg-[rgba(172, 172, 172, 0.49)] flex cursor-pointer py-1 pl-6 text-[13px] ">
                   <div className="flex items-center gap-2">
                     <div className="relative h-[24px] w-[24px]">
@@ -46,8 +46,8 @@ export default function Profile() {
                     <span>Ayuda en línea</span>
                   </div>
                 </div>
-              </Link>
-            </Menu.Item>
+              </Menu.Item>
+            </Link>
             <Menu.Item>
               {session ? (
                 <div
