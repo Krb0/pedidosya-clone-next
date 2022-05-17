@@ -10,6 +10,7 @@ import shieldBadge from '../assets/icons/shieldBadge.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { add, clear } from '../store/cart/cart.slice'
 import { useEffect } from 'react'
+import { useSession } from 'next-auth/react'
 
 const BadgesData = [
   {
@@ -32,9 +33,10 @@ const BadgesData = [
 ]
 
 const Home: NextPage = () => {
-  const cart = useSelector((state: any) => state.cart)
-  console.log(cart)
+  /*   const cart = useSelector((state: any) => state.cart)
+  console.log(cart) */
   const dispatch = useDispatch()
+  const { data: session } = useSession()
   return (
     <Layout>
       <Head>
