@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Profile from './Profile'
 const Navbar = () => {
   return (
-    <div className="z-2 relative flex w-full items-center bg-[#F9F6F4] py-4 shadow-lg">
+    <div className="z-2 custom-shadow-nav relative flex w-full items-center bg-[#F9F6F4] py-4">
       <div className="flex w-[25%] justify-center">
         <Logo />
       </div>
