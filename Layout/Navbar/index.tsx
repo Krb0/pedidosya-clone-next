@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Logo from './Logo'
-import Market from '../../assets/icons/market.svg'
+import Market from '../../assets/icons/Navbar/market.svg'
 import Link from 'next/link'
 import Profile from './Profile'
 const Navbar = () => {

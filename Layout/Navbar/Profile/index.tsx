@@ -2,9 +2,9 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import Image from 'next/image'
-import MoreInfo from '../../../assets/icons/moreInfo.svg'
-import support from '../../../assets/icons/support.svg'
-import signOutIcon from '../../../assets/icons/signOut.svg'
+import MoreInfo from '../../../assets/icons/shared/moreInfo.svg'
+import support from '../../../assets/icons/Navbar/support.svg'
+import signOutIcon from '../../../assets/icons/Navbar/signOut.svg'
 import Link from 'next/link'
 import { signOut, useSession } from 'next-auth/react'
 

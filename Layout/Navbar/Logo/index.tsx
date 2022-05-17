@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import LogoImg from '../../../assets/logo.svg'
+import LogoImg from '../../../assets/icons/Navbar/logo.svg'
 const Logo = () => {
   return (
     <Link href="/">
