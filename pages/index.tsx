@@ -7,6 +7,9 @@ import MoreInfoSVG from '../assets/icons/moreInfo.svg'
 import locationBadge from '../assets/icons/locationBadge.svg'
 import foodBadge from '../assets/icons/foodBadge.svg'
 import shieldBadge from '../assets/icons/shieldBadge.svg'
+import { useDispatch, useSelector } from 'react-redux'
+import { add, clear } from '../store/cart/cart.slice'
+import { useEffect } from 'react'
 
 const BadgesData = [
   {
@@ -29,6 +32,9 @@ const BadgesData = [
 ]
 
 const Home: NextPage = () => {
+  const cart = useSelector((state: any) => state.cart)
+  console.log(cart)
+  const dispatch = useDispatch()
   return (
     <Layout>
       <Head>
@@ -90,7 +96,7 @@ const Home: NextPage = () => {
                 'https://img.pystatic.com/home-chains/ar/pain_quotidien.png?quality=70&width=200',
                 'https://img.pystatic.com/home-chains/ar/la-farola.png?quality=70&width=200',
               ].map((img) => (
-                <Icon img={img} />
+                <Icon img={img} key={img} />
               ))}
             </div>
             <h5 className="mb-3 w-max pl-6 font-[700]">
@@ -103,7 +109,7 @@ const Home: NextPage = () => {
 
             <div className="mt-10 mb-8 flex flex-col gap-2 pl-6">
               {BadgesData.map((item) => (
-                <Badge {...item} />
+                <Badge {...item} key={item.title} />
               ))}
             </div>
           </div>
