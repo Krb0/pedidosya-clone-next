@@ -4,10 +4,12 @@ import { Menu, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import MoreInfo from '../../../assets/icons/moreInfo.svg'
 import support from '../../../assets/icons/support.svg'
-import signOut from '../../../assets/icons/signOut.svg'
+import signOutIcon from '../../../assets/icons/signOut.svg'
 import Link from 'next/link'
+import { signOut, useSession } from 'next-auth/react'
 
 export default function Profile() {
+  const { data: session } = useSession()
   return (
     <Menu as="div" className="relative inline-block text-left">
       <Menu.Button className="flex cursor-pointer items-center gap-2 pl-6">
@@ -47,16 +49,30 @@ export default function Profile() {
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/login">
-                <div className="font-muli hover:bg-[rgba(172, 172, 172, 0.49)] flex cursor-pointer py-1 pl-6 text-[13px] ">
+              {session ? (
+                <div
+                  onClick={() => signOut()}
+                  className="font-muli hover:bg-[rgba(172, 172, 172, 0.49)] flex cursor-pointer py-1 pl-6 text-[13px] "
+                >
                   <div className="flex items-center gap-2">
                     <div className="relative h-[24px] w-[24px]">
-                      <Image layout="fill" src={signOut} />
+                      <Image layout="fill" src={signOutIcon} />
                     </div>
-                    <span>Ingresar / Registrarse</span>
+                    <span>Cerrar sesión</span>
                   </div>
                 </div>
-              </Link>
+              ) : (
+                <Link href="/login">
+                  <div className="font-muli hover:bg-[rgba(172, 172, 172, 0.49)] flex cursor-pointer py-1 pl-6 text-[13px] ">
+                    <div className="flex items-center gap-2">
+                      <div className="relative h-[24px] w-[24px]">
+                        <Image layout="fill" src={signOutIcon} />
+                      </div>
+                      <span>Ingresar / Registrarse</span>
+                    </div>
+                  </div>
+                </Link>
+              )}
             </Menu.Item>
           </div>
         </Menu.Items>
