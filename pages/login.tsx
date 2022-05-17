@@ -3,6 +3,7 @@ import Image from 'next/image'
 import logo from '../assets/icons/logo.svg'
 import google from '../assets/icons/google.svg'
 import Link from 'next/link'
+import { signIn } from 'next-auth/react'
 const Login: NextPage = () => {
   return (
     <div className="absolute flex h-screen w-screen items-center justify-center bg-[#413d4bbf]">
@@ -24,19 +25,22 @@ const Login: NextPage = () => {
           ¿Cómo querés continuar?
         </h2>
         <div className="mt-8 flex w-full flex-col gap-4">
-          <button className="font-muli relative flex items-center rounded-full bg-[#3b5998] p-2 py-3 font-bold">
+          <button className="font-muli relative flex items-center rounded-full bg-[#3b5998] p-2 py-3 font-bold" disabled>
             <div className="absolute left-2 h-8 w-8">
               <Image layout="fill" src={google} />
             </div>
             <span className="w-full">Continuar con Facebook</span>
           </button>
-          <button className="font-muli relative flex items-center rounded-full bg-blue-500 p-2 py-3 font-bold">
+          <button
+            onClick={() => signIn('google')}
+            className="font-muli relative flex items-center rounded-full bg-blue-500 p-2 py-3 font-bold"
+          >
             <div className="absolute left-2 h-8 w-8">
               <Image layout="fill" src={google} />
             </div>
             <span className="w-full">Continuar con Google</span>
           </button>
-          <button className="font-muli relative flex items-center rounded-full border-2 p-2 py-3 font-bold">
+          <button className="font-muli relative flex items-center rounded-full border-2 p-2 py-3 font-bold" disabled>
             <span className="w-full">Continuar de otra forma</span>
           </button>
         </div>
