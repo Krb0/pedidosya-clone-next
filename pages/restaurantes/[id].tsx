@@ -6,7 +6,7 @@ import Layout from '../../Layout'
 const Negocio: NextPage = () => {
   const { query } = useRouter()
   console.log(query.id)
-  return <Layout>hola</Layout>
+  return <Layout>Restaurante con ID:{query.id}</Layout>
 }
 
 export default Negocio
