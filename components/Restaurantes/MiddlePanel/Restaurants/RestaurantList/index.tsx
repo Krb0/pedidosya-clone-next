@@ -1,9 +1,8 @@
 import Item from './Item'
-import data from './mock.json'
-const RestaurantList = () => {
+const RestaurantList = ({ data }: any) => {
   return (
     <div className="flex flex-col gap-4">
-      {data.map((item) => (
+      {data.map((item: any) => (
         <Item {...item} key={item.id} />
       ))}
     </div>

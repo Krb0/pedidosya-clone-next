@@ -3,31 +3,46 @@ import badStar from '../../../../../../assets/icons/Restaurants/badStar.png'
 import goodStar from '../../../../../../assets/icons/Restaurants/goodStar.png'
 import bestStar from '../../../../../../assets/icons/Restaurants/bestStar.png'
 import Image from 'next/image'
-
+import card from '../../../../../../assets/icons/Restaurants/card.svg'
+import Link from 'next/link'
 const Item = ({ id, name, image, shipping, rating }: any) => {
   const ratingObj = ratingGetter(rating)
   return (
-    <div className="custom-shadow flex rounded-[6px] bg-white p-[12px] ">
-      <div className="flex flex-1 ">
-        <img
-          src={image}
-          className="mr-[12px] h-[102px] w-[102px] rounded-[6px] border-[1px] border-[#585065] object-cover object-center "
-        />
-        <div>
-          <span className="text-[16px] font-bold  ">{name}</span>
-        </div>
-      </div>
-      <div>
-        <div
-          className={`${ratingObj.class} flex items-center py-1 text-center`}
-        >
-          <div className="relative h-[8px] w-[8px] ">
-            <Image src={ratingObj.img} layout="fill" />
+    <Link href={`/restaurantes/${id}`}>
+      <div className="custom-shadow flex cursor-pointer rounded-[6px] bg-white p-[12px] ">
+        <div className="flex flex-1 ">
+          <img
+            src={image}
+            className="mr-[12px] h-[102px] w-[102px] rounded-[6px] border-[1px] border-[#424242] object-cover object-center "
+          />
+          <div className="flex flex-col">
+            <span className="text-[16px] font-bold  ">{name}</span>
+            <div className="flex items-center gap-1">
+              <div className="relative mt-[2px] h-[15px] w-[15px] ">
+                <Image src={card} layout="fill" />
+              </div>
+              <span className="font-lato text-[12px] font-[400] text-[#666] ">
+                Acepta pago online
+              </span>
+            </div>
+            <div className="font-lato mt-2 flex items-center gap-2 text-[12.2px] text-[#585065] ">
+              <span>40 - 60 min</span>
+              <span>Envío ${shipping} </span>
+            </div>
           </div>
-          <span>{rating.toFixed(1)}</span>
+        </div>
+        <div>
+          <div
+            className={`${ratingObj.class} flex items-center py-1 text-center`}
+          >
+            <div className="relative h-[8px] w-[8px] ">
+              <Image src={ratingObj.img} layout="fill" />
+            </div>
+            <span>{rating.toFixed(1)}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
