@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Inside Veggie Revolution Florida",
+    "image": "https://images.deliveryhero.io/image/pedidosya/restaurants/inside-veggie-revolution-logo.jpg?quality=70&width=100&webp=1",
+    "shipping": 150,
+    "rating": 4.3,
+    "id": 1
+  },
+  {
+    "name": "Okami Sushi - San Nicolás",
+    "image": "https://images.deliveryhero.io/image/pedidosya/restaurants/live-222735.jpg?quality=70&width=100&webp=1",
+    "shipping": 100,
+    "rating": 4.0,
+    "id": 2
+  },
+  {
+    "name": "KFC - Obelisco",
+    "image": "https://images.deliveryhero.io/image/pedidosya/restaurants/kfc-obelisco.jpg?quality=70&width=100&webp=1",
+    "shipping": 200,
+    "rating": 4.0,
+    "id": 3
+  },
+  {
+    "name": "Viva La Mila - Centro",
+    "image": "https://images.deliveryhero.io/image/pedidosya/restaurants/avatar-viva-la-mila.png?quality=70&width=100&webp=1",
+    "shipping": 120,
+    "rating": 4.5,
+    "id": 4
+  },
+  {
+    "name": "Noah's Green Kitchen - Centro",
+    "image": "https://images.deliveryhero.io/image/pedidosya/restaurants/noah-s-green-kitchen-centro-viamonte-881.jpg?quality=70&width=100&webp=1",
+    "shipping": 130,
+    "rating": 4.6,
+    "id": 5
+  },
+  {
+    "name": "Dean & Dennys - Corrientes",
+    "image": "https://images.deliveryhero.io/image/pedidosya/restaurants/dean-and-dennys-ar-logo.jpg?quality=70&width=100&webp=1",
+    "shipping": 0,
+    "rating": 4.1,
+    "id": 6
+  },
+  {
+    "name": "Perez H Microcentro",
+    "image": "https://images.deliveryhero.io/image/pedidosya/restaurants/perez-h-microcentro.jpg?quality=70&width=100&webp=1",
+    "shipping": 150,
+    "rating": 4.4,
+    "id": 7
+  }
+]
