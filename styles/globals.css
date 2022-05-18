@@ -21,3 +21,31 @@
     box-shadow: 0 16px 24px -18px rgb(181 129 108 / 50%);
   }
 }
+
+.worst-star {
+  background-color: rgb(253, 230, 203);
+  color: rgb(141, 102, 2);
+}
+.bad-star {
+  background-color: rgb(253, 230, 203);
+  color: rgb(141, 102, 2);
+}
+.good-star {
+  background-color: rgb(235, 240, 202);
+  color: rgb(101, 125, 2);
+}
+.best-star {
+  background-color: rgb(217, 244, 217);
+  color: rgb(38, 130, 16);
+}
+.worst-star,
+.bad-star,
+.good-star,
+.best-star {
+  font-weight: 800;
+  font-size: 12px;
+  font-family: 'Muli', sans-serif;
+  padding: 0.2rem;
+  gap: 0.2rem;
+  border-radius: 4px;
+}
