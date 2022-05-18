@@ -12,11 +12,11 @@ const Navbar = () => {
       </div>
       <div className="w-[70%]" />
       <Link href="/business">
-        <a className="font-muli flex min-w-[200px] items-center justify-center gap-1 rounded-full bg-[#EAE3E3] px-4 py-1 font-[800] ">
+        <a className="font-muli flex min-w-[170px] items-center justify-center gap-1 rounded-full bg-[#EAE3E3] px-4 py-1 font-[800] ">
           <div className="relative h-4 w-4">
             <Image layout="fill" src={Market} />
           </div>
-          <span className="text-[15px] tracking-tight ">
+          <span className="text-[13px] tracking-tight ">
             Registrá tu negocio
           </span>
         </a>
