@@ -1,8 +1,23 @@
 import Image from 'next/image'
 import LocationSVG from '../../../assets/icons/Home/location.svg'
 import MoreInfoSVG from '../../../assets/icons/shared/moreInfo.svg'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setAddress } from '../../../store/user/user.slice'
+import { useRouter } from 'next/router'
 
 const MainHero = () => {
+  const [search, setSearch] = useState('')
+  const dispatch = useDispatch()
+  const router = useRouter()
+  const handleSubmit = () => {
+    if (search === '' || search.length <= 5) {
+      alert('Debes ingresar una dirección')
+    } else {
+      dispatch(setAddress(search))
+      router.push('/restaurantes')
+    }
+  }
   return (
     <section className="md:bg-food flex h-[85vh] flex-col items-center justify-center gap-10 pb-[60px] text-white ">
       <div className="font-lato text-center">
@@ -28,10 +43,14 @@ const MainHero = () => {
             </div>
             <input
               className="h-full w-full rounded-full text-gray-500 outline-none"
+              onChange={(e) => setSearch(e.target.value)}
               placeholder="Calle y número de puerta"
             />
           </div>
-          <button className="ml-[20px] h-full w-[160px] rounded-full bg-[#FA0050] text-[1.15rem] font-[700] ">
+          <button
+            className="ml-[20px] h-full w-[160px] rounded-full bg-[#FA0050] text-[1.15rem] font-[700] "
+            onClick={handleSubmit}
+          >
             Buscar
           </button>
         </div>
