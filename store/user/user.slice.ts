@@ -4,7 +4,6 @@ interface User {
   address: string
 }
 const initialState: User = { address: '' }
-
 const userSlice = createSlice({
   name: 'user',
   initialState,

@@ -5,9 +5,11 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setAddress } from '../../../store/user/user.slice'
 import { useRouter } from 'next/router'
+import { useCookies } from 'react-cookie'
 
 const MainHero = () => {
-  const [search, setSearch] = useState('')
+  const [cookie, setCookie] = useCookies()
+  const [search, setSearch] = useState(cookie.address ? cookie.address : '')
   const dispatch = useDispatch()
   const router = useRouter()
   const handleSubmit = () => {
@@ -15,6 +17,7 @@ const MainHero = () => {
       alert('Debes ingresar una dirección')
     } else {
       dispatch(setAddress(search))
+      setCookie('address', search, { path: '/' })
       router.push('/restaurantes')
     }
   }
@@ -44,6 +47,7 @@ const MainHero = () => {
             <input
               className="h-full w-full rounded-full text-gray-500 outline-none"
               onChange={(e) => setSearch(e.target.value)}
+              defaultValue={cookie.address}
               placeholder="Calle y número de puerta"
             />
           </div>

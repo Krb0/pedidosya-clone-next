@@ -7,17 +7,18 @@ import LeftPanel from '../../components/Restaurantes/LeftPanel'
 import MiddlePanel from '../../components/Restaurantes/MiddlePanel'
 import RightPanel from '../../components/Restaurantes/RightPanel'
 import Layout from '../../Layout'
+import { useCookies } from 'react-cookie'
 const Restaurantes: NextPage = () => {
   const [loading, setLoading] = useState(true)
-  const address = useSelector((state: any) => state.user.address)
+  const [cookies, setCookie] = useCookies()
   const router = useRouter()
   useEffect(() => {
-    if (address === '') {
+    if (cookies.address === '') {
       router.push('/')
     } else {
       setLoading(false)
     }
-  }, [address])
+  }, [cookies])
 
   if (loading)
     return (
