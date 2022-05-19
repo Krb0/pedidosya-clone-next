@@ -1,12 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import Layout from '../../Layout'
-
+import Header from '../../components/Restaurante/Header'
+import Layout from '../../components/Restaurante/Layout'
 const Negocio: NextPage = () => {
-  const { query } = useRouter()
-  console.log(query.id)
-  return <Layout>Restaurante con ID:{query.id}</Layout>
+  return (
+    <Layout>
+      <Header />
+    </Layout>
+  )
 }
 
 export default Negocio
