@@ -5,6 +5,7 @@ module.exports = {
       'play-lh.googleusercontent.com',
       'img.pystatic.com',
       'live.pystatic.com',
+      'images.deliveryhero.io',
     ],
   },
 }
