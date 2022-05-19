@@ -15,11 +15,18 @@
     background-position: center;
   }
   .custom-shadow {
-    box-shadow: rgb(181 129 108 / 80%) 0px 8px 34px -25px;
+    box-shadow: rgb(181 129 108 / 50%) 0px 8px 34px -20px;
   }
   .custom-shadow-nav {
     box-shadow: 0 16px 24px -18px rgb(181 129 108 / 50%);
   }
+}
+
+.list-decoration {
+  @apply font-lato mt-1 text-[13px] font-[400] text-[#2B1A46];
+}
+.list-decoration li {
+  @apply my-[0.1rem];
 }
 
 .worst-star {
@@ -48,4 +55,7 @@
   padding: 0.2rem;
   gap: 0.2rem;
   border-radius: 4px;
+}
+.bg-gradient-custom {
+  background: linear-gradient(rgba(39, 50, 57, 0), #273239 70%);
 }
