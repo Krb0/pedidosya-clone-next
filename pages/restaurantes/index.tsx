@@ -10,7 +10,7 @@ import Layout from '../../Layout'
 import { useCookies } from 'react-cookie'
 const Restaurantes: NextPage = () => {
   const [loading, setLoading] = useState(true)
-  const [cookies, setCookie] = useCookies()
+  const [cookies] = useCookies()
   const router = useRouter()
   useEffect(() => {
     if (cookies.address === '') {
