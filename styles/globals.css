@@ -46,9 +46,13 @@
   color: rgb(38, 130, 16);
 }
 .worst-star,
+.worst-star-single,
 .bad-star,
+.bad-star-single,
 .good-star,
-.best-star {
+.good-star-single,
+.best-star,
+.best-star-single {
   font-weight: 800;
   font-size: 12px;
   font-family: 'Muli', sans-serif;
@@ -56,6 +60,19 @@
   gap: 0.2rem;
   border-radius: 4px;
 }
+.worst-star-single {
+  color: rgb(141, 102, 2);
+}
+.bad-star-single {
+  color: rgb(141, 102, 2);
+}
+.good-star-single {
+  color: rgb(101, 125, 2);
+}
+.best-star-single {
+  color: rgb(38, 130, 16);
+}
+
 .bg-gradient-custom {
   background: linear-gradient(rgba(39, 50, 57, 0), #273239 70%);
 }
