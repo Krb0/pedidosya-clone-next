@@ -1,6 +1,5 @@
 import RestaurantList from './RestaurantList'
-import data from './mock.json'
-const Restaurants = () => {
+const Restaurants = ({ data }: any) => {
   return (
     <div className="mt-8 flex flex-col">
       <h3 className="font-muli mb-8 text-[17px] font-[800]">

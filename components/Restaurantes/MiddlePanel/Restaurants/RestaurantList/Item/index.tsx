@@ -5,18 +5,19 @@ import bestStar from '../../../../../../assets/icons/Restaurants/bestStar.png'
 import Image from 'next/image'
 import card from '../../../../../../assets/icons/Restaurants/card.svg'
 import Link from 'next/link'
-const Item = ({ id, name, image, shipping, rating }: any) => {
-  const ratingObj = ratingGetter(rating)
+const Item = ({ _id: id, nombre, logo, envio, ...rest }: any) => {
+  console.log(logo)
+  const ratingObj = ratingGetter(4.5)
   return (
     <Link href={`/restaurantes/${id}`}>
       <div className="custom-shadow flex cursor-pointer rounded-[6px] bg-white p-[12px] ">
         <div className="flex flex-1 ">
           <img
-            src={image}
+            src={logo}
             className="mr-[12px] h-[102px] w-[102px] rounded-[6px] border-[1px] border-[#424242] object-cover object-center "
           />
           <div className="flex flex-col">
-            <span className="text-[16px] font-bold  ">{name}</span>
+            <span className="text-[16px] font-bold  ">{nombre}</span>
             <div className="flex items-center gap-1">
               <div className="relative mt-[2px] h-[15px] w-[15px] ">
                 <Image src={card} layout="fill" />
@@ -27,7 +28,7 @@ const Item = ({ id, name, image, shipping, rating }: any) => {
             </div>
             <div className="font-lato mt-2 flex items-center gap-2 text-[12.2px] text-[#585065] ">
               <span>40 - 60 min</span>
-              <span>Envío ${shipping} </span>
+              <span>Envío ${envio} </span>
             </div>
           </div>
         </div>
@@ -38,7 +39,7 @@ const Item = ({ id, name, image, shipping, rating }: any) => {
             <div className="relative h-[8px] w-[8px] ">
               <Image src={ratingObj.img} layout="fill" />
             </div>
-            <span>{rating.toFixed(1)}</span>
+            <span>4.5</span>
           </div>
         </div>
       </div>

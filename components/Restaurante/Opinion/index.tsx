@@ -5,7 +5,7 @@ import bestStar from '../../../assets/icons/Restaurants/bestStar.png'
 import Image from 'next/image'
 import rightArrow from '../../../assets/icons/Restaurant/rightArrow.svg'
 import Link from 'next/link'
-const Opinion = ({ rating, id }: { rating: number; id: number }) => {
+const Opinion = ({ rating, id }: { rating: number; id: string }) => {
   const ratingObj = ratingGetter(rating)
   return (
     <div className="custom-shadow flex h-[68px] w-full items-center gap-6 bg-white pl-[4%]">

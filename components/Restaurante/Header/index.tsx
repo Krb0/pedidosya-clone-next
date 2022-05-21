@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import SearchIcon from '../../../assets/icons/shared/search.svg'
-const Header = () => {
+const Header = ({ data }: any) => {
   return (
     <div className="relative">
       <div className="relative h-[230px] w-screen bg-contain  ">
@@ -18,12 +18,12 @@ const Header = () => {
         <div className="pl-[16%] ">
           <div className="my-[12px] flex flex-col gap-2">
             <h1 className="font-muli min-w-max text-[24px] font-extrabold ">
-              Inside Veggie Revolution Florida
+              {data?.nombre}
             </h1>
             <div className="font-lato flex gap-2 text-[14px] ">
               <span>15 - 30 min</span>
-              <span>$139 envío</span>
-              <span>Mínimo $299</span>
+              <span>${data.envio} envío</span>
+              <span>Mínimo ${data.minimo}</span>
             </div>
           </div>
           <div className="mb-6 flex h-[36px] w-[520px] items-center gap-2 rounded-full bg-white pl-4">
