@@ -8,9 +8,11 @@ import MiddlePanel from '../../components/Restaurantes/MiddlePanel'
 import RightPanel from '../../components/Restaurantes/RightPanel'
 import Layout from '../../Layout'
 import { useCookies } from 'react-cookie'
+import useRestaurant from '../../hooks/useRestaurant'
 const Restaurantes: NextPage = () => {
   const [loading, setLoading] = useState(true)
   const [cookies] = useCookies()
+  const [data] = useRestaurant()
   const router = useRouter()
   useEffect(() => {
     if (cookies.address === '') {
@@ -34,7 +36,7 @@ const Restaurantes: NextPage = () => {
     <Layout>
       <div className="max-w-screen flex min-h-screen bg-[#F9F6F4] pt-[24px] ">
         <LeftPanel />
-        <MiddlePanel />
+        <MiddlePanel data={data?.restaurantes ? data.restaurantes : []} />
         <RightPanel />
       </div>
     </Layout>
