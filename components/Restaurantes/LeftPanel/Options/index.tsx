@@ -1,5 +1,7 @@
 import Image from 'next/image'
+import { useState } from 'react'
 import moreVertIcon from '../../../../assets/icons/shared/moreInfo.svg'
+import lessVertIcon from '../../../../assets/icons/shared/lessVertIcon.svg'
 const Options = () => {
   const items = [
     {
@@ -25,23 +27,37 @@ const Options = () => {
 export default Options
 
 const List = ({ items }: { items: { title: string; options: string[] }[] }) => {
+  const [active, setActive] = useState([true, true, true])
   return (
     <>
-      {items.map(({ title, options }) => (
+      {items.map(({ title, options }, index) => (
         <>
           <div style={{ marginTop: 4, marginBottom: 12 }}>
-            <div className="flex cursor-pointer items-center gap-1">
+            <div
+              className="flex cursor-pointer items-center gap-1"
+              onClick={() =>
+                setActive((state) => {
+                  const newState = [...state]
+                  newState[index] = !state[index]
+                  return newState
+                })
+              }
+            >
               <p className="font-muli text-[16px] font-bold ">{title}</p>
               <div className="relative h-4 w-4">
-                <Image src={moreVertIcon} layout="fill" />
+                <Image
+                  src={active[index] ? moreVertIcon : lessVertIcon}
+                  layout="fill"
+                />
               </div>
             </div>
             <ul className="list-decoration">
-              {options.map((option) => (
-                <li className="cursor-pointer">
-                  <span>{option}</span>
-                </li>
-              ))}
+              {active[index] &&
+                options.map((option) => (
+                  <li className="cursor-pointer">
+                    <span>{option}</span>
+                  </li>
+                ))}
             </ul>
           </div>
         </>
