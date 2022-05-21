@@ -9,6 +9,7 @@ import RightPanel from '../../components/Restaurantes/RightPanel'
 import Layout from '../../Layout'
 import { useCookies } from 'react-cookie'
 import useRestaurant from '../../hooks/useRestaurant'
+import Loader from '../../components/Loader'
 const Restaurantes: NextPage = () => {
   const [loading, setLoading] = useState(true)
   const [cookies] = useCookies()
@@ -22,16 +23,7 @@ const Restaurantes: NextPage = () => {
     }
   }, [cookies])
 
-  if (loading)
-    return (
-      <div className="flex h-screen w-screen items-center justify-center">
-        <img
-          src={
-            'https://live.pystatic.com/webassets/AppscoreWeb/monolith/4.0.48/images/monolith-shopListLoader.cca36f65.png'
-          }
-        />
-      </div>
-    )
+  if (loading) return <Loader />
   return (
     <Layout>
       <div className="max-w-screen flex min-h-screen bg-[#F9F6F4] pt-[24px] ">
