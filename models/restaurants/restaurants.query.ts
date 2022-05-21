@@ -6,6 +6,10 @@ export const ALL_RESTAURANTS = gql`
       _id
       nombre
       logo
+      simpleOpinion {
+        rating
+        opinionCount
+      }
       tipo
       envio
       minimo
@@ -26,6 +30,10 @@ export const FIND_RESTAURANT = gql`
         _id
         nombre
         precio
+      }
+      simpleOpinion {
+        rating
+        opinionCount
       }
     }
   }

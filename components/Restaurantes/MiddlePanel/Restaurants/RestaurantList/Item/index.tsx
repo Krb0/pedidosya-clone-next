@@ -6,8 +6,7 @@ import Image from 'next/image'
 import card from '../../../../../../assets/icons/Restaurants/card.svg'
 import Link from 'next/link'
 const Item = ({ _id: id, nombre, logo, envio, ...rest }: any) => {
-  console.log(logo)
-  const ratingObj = ratingGetter(4.5)
+  const ratingObj = ratingGetter(rest.simpleOpinion.rating)
   return (
     <Link href={`/restaurantes/${id}`}>
       <div className="custom-shadow flex cursor-pointer rounded-[6px] bg-white p-[12px] ">
@@ -39,7 +38,7 @@ const Item = ({ _id: id, nombre, logo, envio, ...rest }: any) => {
             <div className="relative h-[8px] w-[8px] ">
               <Image src={ratingObj.img} layout="fill" />
             </div>
-            <span>4.5</span>
+            <span>{rest.simpleOpinion.rating}</span>
           </div>
         </div>
       </div>

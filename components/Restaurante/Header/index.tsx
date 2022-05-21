@@ -3,7 +3,7 @@ import SearchIcon from '../../../assets/icons/shared/search.svg'
 const Header = ({ data }: any) => {
   return (
     <div className="relative">
-      <div className="relative h-[230px] w-screen bg-contain  ">
+      <div className="relative h-[230px] w-full bg-contain  ">
         <Image
           src={
             'https://images.deliveryhero.io/image/pedidosya/profile-headers/custom-header-inside-veggie-revolution.jpg?quality=70&width=1280&webp=1'
@@ -18,7 +18,7 @@ const Header = ({ data }: any) => {
         <div className="pl-[16%] ">
           <div className="my-[12px] flex flex-col gap-2">
             <h1 className="font-muli min-w-max text-[24px] font-extrabold ">
-              {data?.nombre}
+              {data.nombre}
             </h1>
             <div className="font-lato flex gap-2 text-[14px] ">
               <span>15 - 30 min</span>
