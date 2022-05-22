@@ -26,9 +26,9 @@ const Negocio: NextPage = () => {
       <Header data={data?.restaurante ? data.restaurante : {}} />
       <div className="bg-[#F9F6F4]">
         <Opinion opinions={data?.restaurante?.simpleOpinion} id={id!} />
-        <div className="max-w-screen flex min-h-screen bg-[#F9F6F4] pt-[24px] ">
-          <LeftPanel />
-          <MiddlePanel />
+        <div className="max-w-screen bg-[##F9F6F4] flex min-h-screen pt-[24px] ">
+          <LeftPanel categorias={data.restaurante.categorias} />
+          <MiddlePanel categorias={data.restaurante.categorias} />
           <RightPanel />
         </div>
       </div>
