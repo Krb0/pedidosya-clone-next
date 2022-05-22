@@ -7,7 +7,7 @@ import Link from 'next/link'
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex flex-col">
-      <header className="flex h-[53px] w-screen items-center justify-between bg-white ">
+      <header className="max-w-screen flex h-[53px] items-center justify-between bg-white ">
         <div className="flex items-center">
           <Link href="/restaurantes">
             <div className="relative m-[10px] h-[24px] w-[24px] cursor-pointer ">

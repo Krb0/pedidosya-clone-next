@@ -3,15 +3,10 @@ import SearchIcon from '../../../assets/icons/shared/search.svg'
 const Header = ({ data }: any) => {
   return (
     <div className="relative">
-      <div className="relative h-[230px] w-full bg-contain  ">
-        <Image
-          src={
-            'https://images.deliveryhero.io/image/pedidosya/profile-headers/custom-header-inside-veggie-revolution.jpg?quality=70&width=1280&webp=1'
-          }
-          layout="fill"
-          className="object-cover"
-        />
-      </div>
+      <img
+        src={data.fondo}
+        className=" relative h-[230px] w-full object-cover"
+      />
       <div className="bg-gradient-custom absolute bottom-0 z-0 h-[200px] w-full  " />
       <div className="absolute top-0 flex h-full flex-col text-white ">
         <div className="flex-grow" />

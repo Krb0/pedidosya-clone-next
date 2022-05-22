@@ -14,7 +14,7 @@ const Opinion = ({
 }) => {
   const ratingObj = ratingGetter(opinions?.rating ? opinions.rating : 0)
   return (
-    <div className="custom-shadow flex h-[68px] w-full items-center gap-6 bg-white pl-[4%]">
+    <div className="custom-shadow-nav flex h-[68px] w-full items-center gap-6 bg-white pl-[4%]">
       <div className={`${ratingObj.class} flex items-center py-1 text-center`}>
         <div className="relative h-[8px] w-[8px] ">
           <Image src={ratingObj.img} layout="fill" />

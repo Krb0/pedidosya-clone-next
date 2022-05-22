@@ -3,16 +3,18 @@ import { useState } from 'react'
 import moreVertIcon from '../../../assets/icons/shared/moreInfo.svg'
 import lessVertIcon from '../../../assets/icons/shared/lessVertIcon.svg'
 
-const LeftPanel = () => {
+const LeftPanel = ({ categorias }: any) => {
   const items = [
     {
       title: 'Categorías',
-      options: ['Promociones', 'Ofertas hasta $499'],
+      options: categorias
+        ? categorias.map((categoria: any) => categoria.nombre)
+        : [],
     },
   ]
   return (
-    <div className=" flex flex-[1] flex-col ">
-      <div className="custom-shadow mt-8 p-6">
+    <div className="flex flex-[1] flex-col">
+      <div className="custom-shadow ml-[12%] mr-[12%] rounded-[5px]  bg-white p-6 ">
         <List items={items} />
       </div>
     </div>
