@@ -1,5 +1,4 @@
 import { useQuery } from '@apollo/client'
-import React, { useEffect } from 'react'
 import {
   ALL_RESTAURANTS,
   FIND_RESTAURANT,
