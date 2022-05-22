@@ -29,6 +29,12 @@
   @apply my-[0.1rem];
 }
 
+.bg-business {
+  background: url('https://socios.pedidosya.com/resource/PedidosYaResource/PedidosYaResource/images/bg_landing-min.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .worst-star {
   background-color: rgb(253, 230, 203);
   color: rgb(141, 102, 2);
