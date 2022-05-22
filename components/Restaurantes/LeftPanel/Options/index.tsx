@@ -31,36 +31,34 @@ const List = ({ items }: { items: { title: string; options: string[] }[] }) => {
   return (
     <>
       {items.map(({ title, options }, index) => (
-        <>
-          <div style={{ marginTop: 4, marginBottom: 12 }}>
-            <div
-              className="flex cursor-pointer items-center gap-1"
-              onClick={() =>
-                setActive((state) => {
-                  const newState = [...state]
-                  newState[index] = !state[index]
-                  return newState
-                })
-              }
-            >
-              <p className="font-muli text-[16px] font-bold ">{title}</p>
-              <div className="relative h-4 w-4">
-                <Image
-                  src={active[index] ? moreVertIcon : lessVertIcon}
-                  layout="fill"
-                />
-              </div>
+        <div style={{ marginTop: 4, marginBottom: 12 }} key={title}>
+          <div
+            className="flex cursor-pointer items-center gap-1"
+            onClick={() =>
+              setActive((state) => {
+                const newState = [...state]
+                newState[index] = !state[index]
+                return newState
+              })
+            }
+          >
+            <p className="font-muli text-[16px] font-bold ">{title}</p>
+            <div className="relative h-4 w-4">
+              <Image
+                src={active[index] ? moreVertIcon : lessVertIcon}
+                layout="fill"
+              />
             </div>
-            <ul className="list-decoration">
-              {active[index] &&
-                options.map((option) => (
-                  <li className="cursor-pointer">
-                    <span>{option}</span>
-                  </li>
-                ))}
-            </ul>
           </div>
-        </>
+          <ul className="list-decoration">
+            {active[index] &&
+              options.map((option) => (
+                <li className="cursor-pointer" key={option}>
+                  <span>{option}</span>
+                </li>
+              ))}
+          </ul>
+        </div>
       ))}
     </>
   )

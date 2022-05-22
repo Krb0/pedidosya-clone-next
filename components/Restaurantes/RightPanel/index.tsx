@@ -45,36 +45,34 @@ const List = ({ items }: { items: { title: string; options: string[] }[] }) => {
   return (
     <>
       {items.map(({ title, options }, index) => (
-        <>
-          <div style={{ marginTop: 8, marginBottom: 12 }}>
-            <div
-              className="flex cursor-pointer items-center gap-1 "
-              onClick={() =>
-                setActive((state) => {
-                  const newState = [...state]
-                  newState[index] = !state[index]
-                  return newState
-                })
-              }
-            >
-              <p className="font-muli text-[16px] font-bold ">{title}</p>
-              <div className="relative h-4 w-4">
-                <Image
-                  src={active[index] ? moreVertIcon : lessVertIcon}
-                  layout="fill"
-                />
-              </div>
+        <div style={{ marginTop: 8, marginBottom: 12 }} key={title}>
+          <div
+            className="flex cursor-pointer items-center gap-1 "
+            onClick={() =>
+              setActive((state) => {
+                const newState = [...state]
+                newState[index] = !state[index]
+                return newState
+              })
+            }
+          >
+            <p className="font-muli text-[16px] font-bold ">{title}</p>
+            <div className="relative h-4 w-4">
+              <Image
+                src={active[index] ? moreVertIcon : lessVertIcon}
+                layout="fill"
+              />
             </div>
-            <ul className="font-lato mt-1 text-[14px] font-[400] text-[#2B1A46]">
-              {active[index] &&
-                options.map((option) => (
-                  <li className="my-[0.3rem] cursor-pointer">
-                    <span>{option}</span>
-                  </li>
-                ))}
-            </ul>
           </div>
-        </>
+          <ul className="font-lato mt-1 text-[14px] font-[400] text-[#2B1A46]">
+            {active[index] &&
+              options.map((option) => (
+                <li className="my-[0.3rem] cursor-pointer" key={option}>
+                  <span>{option}</span>
+                </li>
+              ))}
+          </ul>
+        </div>
       ))}
     </>
   )
