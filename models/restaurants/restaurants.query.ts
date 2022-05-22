@@ -25,11 +25,16 @@ export const FIND_RESTAURANT = gql`
       envio
       nombre
       minimo
-      platos {
-        foto
-        _id
+      fondo
+      categorias {
         nombre
-        precio
+        platos {
+          nombre
+          foto
+          _id
+          descripcion
+          precio
+        }
       }
       simpleOpinion {
         rating
