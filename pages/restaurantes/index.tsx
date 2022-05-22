@@ -26,7 +26,7 @@ const Restaurantes: NextPage = () => {
   if (loading) return <Loader />
   return (
     <Layout>
-      <div className="max-w-screen flex min-h-screen bg-[#F9F6F4] pt-[24px] ">
+      <div className="max-w-screen bg-[##F9F6F4] flex min-h-screen pt-[24px] ">
         <LeftPanel />
         <MiddlePanel data={data?.restaurantes ? data.restaurantes : []} />
         <RightPanel />
