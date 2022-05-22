@@ -14,6 +14,17 @@ const RightPanel = ({ cart, dispatch }: any) => {
                 <Item plato={plato} dispatch={dispatch} key={plato._id} />
               ))}
             </div>
+            <div className="custom-shadow mt-5 flex flex-col ">
+              <div className="font-lato flex w-full justify-between text-[14px] text-[#585065] ">
+                <span>Subtotal</span>
+                <span>
+                  ${cart.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+                </span>
+              </div>
+              <button className="font-muli mt-3 rounded-full bg-[#FA0050] py-[16px] px-[40px] text-[16px] font-bold text-white ">
+                Ir a Pagar
+              </button>
+            </div>
           </>
         ) : (
           <div className="flex w-full flex-col items-center justify-center">
