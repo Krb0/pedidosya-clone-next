@@ -16,7 +16,6 @@ const Negocio: NextPage = () => {
   const id = router.query.id?.toString()
   const [data, loading] = useRestaurant(router.query.id?.toString())
   const [cart, dispatch] = useReducer(reducer, { items: [] })
-  console.log(cart)
   useEffect(() => {
     if (!loading && !data) {
       router.push('/restaurantes')
