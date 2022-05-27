@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import moreVertIcon from '../../../assets/icons/shared/moreInfo.svg'
 import lessVertIcon from '../../../assets/icons/shared/lessVertIcon.svg'
 
-const LeftPanel = ({ categorias }: any) => {
+const LeftPanel = ({ categorias, activeCategory,setActiveCategory }: any) => {
   const items = [
     {
       title: 'Categorías',
@@ -15,7 +15,11 @@ const LeftPanel = ({ categorias }: any) => {
   return (
     <div className="flex flex-[1] flex-col">
       <div className="custom-shadow ml-[12%] mr-[12%] rounded-[5px]  bg-white p-6 ">
-        <List items={items} />
+        <List
+          items={items}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+        />
       </div>
     </div>
   )
@@ -23,7 +27,15 @@ const LeftPanel = ({ categorias }: any) => {
 
 export default LeftPanel
 
-const List = ({ items }: { items: { title: string; options: string[] }[] }) => {
+const List = ({
+  items,
+  activeCategory,
+  setActiveCategory,
+}: {
+  items: { title: string; options: string[] }[]
+  activeCategory?: string | null
+  setActiveCategory: React.Dispatch<React.SetStateAction<string | null>>
+}) => {
   const [active, setActive] = useState([true, true, true])
 
   return (
@@ -51,8 +63,22 @@ const List = ({ items }: { items: { title: string; options: string[] }[] }) => {
           <ul className="font-lato mt-1 text-[14px] font-[400] text-[#2B1A46]">
             {active[index] &&
               options.map((option) => (
-                <li className="my-[0.3rem] cursor-pointer" key={option}>
-                  <span>{option}</span>
+                <li
+                  className="my-[0.3rem] cursor-pointer"
+                  key={option}
+                  onClick={() =>
+                    activeCategory === option
+                      ? setActiveCategory(null)
+                      : setActiveCategory(option)
+                  }
+                >
+                  <span
+                    className={`${
+                      option === activeCategory ? 'font-bold' : ''
+                    }`}
+                  >
+                    {option}
+                  </span>
                 </li>
               ))}
           </ul>

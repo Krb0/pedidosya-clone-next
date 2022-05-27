@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useEffect, useReducer } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 import Loader from '../../../components/Loader'
 import Header from '../../../components/Restaurante/Header'
 import Layout from '../../../components/Restaurante/Layout'
@@ -15,6 +15,7 @@ const Negocio: NextPage = () => {
   const router = useRouter()
   const id = router.query.id?.toString()
   const [data, loading] = useRestaurant(router.query.id?.toString())
+  const [activeCategory, setActiveCategory] = useState(null)
   const [cart, dispatch] = useReducer(reducer, { items: [] })
   useEffect(() => {
     if (!loading && !data) {
@@ -30,10 +31,15 @@ const Negocio: NextPage = () => {
           <div className="bg-[#F9F6F4]">
             <Opinion opinions={data?.restaurante?.simpleOpinion} id={id!} />
             <div className="max-w-screen bg-[##F9F6F4] flex min-h-screen pt-[24px] ">
-              <LeftPanel categorias={data.restaurante.categorias} />
+              <LeftPanel
+                categorias={data.restaurante.categorias}
+                activeCategory={activeCategory}
+                setActiveCategory={setActiveCategory}
+              />
               <MiddlePanel
                 dispatch={dispatch}
                 categorias={data.restaurante.categorias}
+                activeCategory={activeCategory}
               />
               <RightPanel cart={cart} dispatch={dispatch} />
             </div>

@@ -17,7 +17,7 @@ export default function Profile() {
           <Image
             layout="fill"
             className="rounded-full"
-            src="https://play-lh.googleusercontent.com/QTL4zl6hukny5XrTW3PnNf9OH0E5osKG-DfrGEQ1YwRt1FoYdaHynTtlc0MyCq1w2mhq"
+            src={ session?.user?.image ? session?.user?.image: "https://play-lh.googleusercontent.com/QTL4zl6hukny5XrTW3PnNf9OH0E5osKG-DfrGEQ1YwRt1FoYdaHynTtlc0MyCq1w2mhq"}
           />
         </div>
         <div className="relative h-4 w-4">

@@ -6,6 +6,7 @@ module.exports = {
       'img.pystatic.com',
       'live.pystatic.com',
       'images.deliveryhero.io',
+      'lh3.googleusercontent.com',
     ],
   },
 }
